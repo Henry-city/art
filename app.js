@@ -59,7 +59,7 @@ function round(stage) {
   header.append(make('p', 'eyebrow', stage.label), make('h3', '', stage.title));
   const instruction = make('div', 'instruction');
   instruction.append(make('blockquote', '', stage.instruction.text));
-  const images = make('div', 'round-images' + (stage.images.length === 1 ? ' single-image' : ''));
+  const images = make('div', 'round-images' + (stage.images.length === 1 ? ' single-image' : '') + (stage.layout === 'comparison' ? ' comparison' : ''));
   images.append(...stage.images.map(item => figure(item, false, stage.images.length > 1)));
   node.append(header, instruction, images);
   return node;
