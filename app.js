@@ -1,6 +1,4 @@
-const TALLY_FORM_URL = 'https://tally.so/r/2javLg';
-const DATA = window.SOLWAVE_GALLERY;
-const ASSETS = DATA.versions;
+const DATA = window.ASSET_GALLERY;
 const app = document.getElementById('app');
 const reportButton = document.getElementById('report-issue');
 function make(tag, cls, text) {
@@ -12,80 +10,101 @@ function make(tag, cls, text) {
 function link(text, href, cls) {
   const node = make('a', cls, text); node.href = href; return node;
 }
-function image(path, alt, dimensions, eager = false) {
-  const node = make('img'); node.src = path; node.alt = alt;
-  node.width = dimensions.width; node.height = dimensions.height;
+function image(item, eager = false) {
+  const node = make('img'); node.src = item.path; node.alt = item.title;
+  node.width = item.width; node.height = item.height;
   node.loading = eager ? 'eager' : 'lazy'; node.decoding = 'async'; return node;
 }
-function figure(asset, item, eager = false) {
-  const node = make('figure', 'panel'), frame = link('', asset.root + item.file, 'image-frame');
-  frame.setAttribute('aria-label', '查看图片：' + item.title);
-  frame.append(image(asset.root + item.file, item.title, item, eager));
+function figure(item, eager = false) {
+  const node = make('figure', 'panel');
+  const frame = link('', item.path, 'image-frame');
+  frame.setAttribute('aria-label', '放大查看：' + item.title);
+  frame.append(image(item, eager));
   const caption = make('figcaption');
-  caption.append(make('strong', '', item.title), document.createTextNode(item.caption));
+  caption.append(make('strong', '', item.title));
+  if (item.caption) caption.append(make('span', '', item.caption));
   node.append(frame, caption); return node;
 }
 function section(id, eyebrow, title) {
-  const node = make('section', 'io'); node.id = id;
-  node.setAttribute('aria-labelledby', id + '-title');
-  const head = make('div', 'section-head'), text = make('div'), heading = make('h2', '', title);
-  heading.id = id + '-title'; text.append(make('p', 'eyebrow', eyebrow), heading);
-  head.append(text); node.append(head); return node;
+  const node = make('section', 'section'); node.id = id;
+  const heading = make('h2', '', title); heading.id = id + '-title';
+  node.setAttribute('aria-labelledby', heading.id);
+  const head = make('div', 'section-head');
+  head.append(make('p', 'eyebrow', eyebrow), heading); node.append(head); return node;
 }
 function card(asset) {
-  const node = make('article', 'card'), thumb = link('', '?asset=' + asset.id, 'thumb');
-  thumb.setAttribute('aria-label', '查看 ' + asset.name);
-  thumb.append(image(asset.root + asset.thumbnail.file, asset.name + '闭门渲染', asset.thumbnail, true));
-  thumb.append(make('span', 'state', asset.version.toUpperCase() + ' · PROCESS'), make('span', 'caption', asset.title));
-  const body = make('div', 'body'), tags = make('div', 'tags'), footer = make('div', 'footer');
-  tags.append(make('span', 'tag', 'Microwave'), make('span', 'tag method', 'Blender modeling'));
-  footer.append(make('span', 'subtle', asset.images.length + ' 张过程图'), link('查看过程 →', '?asset=' + asset.id, 'detail-link'));
-  body.append(tags, make('h3', '', asset.name), make('p', 'desc', asset.description), footer);
+  const node = make('article', 'card');
+  const thumb = link('', '?asset=' + asset.id, 'thumb');
+  thumb.setAttribute('aria-label', '查看资产：' + asset.name);
+  thumb.append(image(asset.thumbnail, true), make('span', 'state', 'INPUT → OUTPUT'));
+  const body = make('div', 'card-body'), tags = make('div', 'tags'), foot = make('div', 'card-footer');
+  tags.append(make('span', 'tag', asset.category), make('span', 'tag method', asset.method));
+  foot.append(make('span', 'muted', asset.process.length + ' 轮过程记录'), link('查看资产 →', '?asset=' + asset.id, 'detail-link'));
+  body.append(tags, make('h3', '', asset.name), make('p', 'description', asset.description), foot);
   node.append(thumb, body); return node;
 }
 function renderHome() {
-  app.replaceChildren();
   const hero = make('section', 'hero');
-  hero.append(make('p', 'eyebrow', 'Reference → Iteration'), make('h1', '', '从参考图，到逐轮修订。'), make('p', 'lead', '保留 SOLWAVE 微波炉的两轮建模过程，查看初版比例、开门结构，以及金属面齐平与圆角修订。'));
-  const gallery = section('versions', 'Process archive', '过程版本'); gallery.classList.add('gallery-section');
-  const grid = make('div', 'grid gallery-grid'); grid.append(...ASSETS.map(card));
-  gallery.append(grid); app.append(hero, gallery); document.title = 'SOLWAVE · v1 / v2 过程记录';
+  hero.append(make('p', 'eyebrow', 'Articulated asset gallery'), make('h1', '', '从参考，到成形。'),
+    make('p', 'lead', '查看每个资产的输入与最终结果，沿着过程图片、修改提示词和人工编辑记录，回看它如何一步步成形。'));
+  const gallery = section('assets', 'Collection / ' + String(DATA.assets.length).padStart(2, '0'), '资产库');
+  const grid = make('div', 'gallery-grid'); grid.append(...DATA.assets.map(card)); gallery.append(grid);
+  app.replaceChildren(hero, gallery); document.title = 'Articulated Assets · 资产库';
+}
+function round(stage) {
+  const node = make('article', 'round'); node.id = stage.id;
+  const header = make('div', 'round-head');
+  header.append(make('p', 'eyebrow', stage.label), make('h3', '', stage.title));
+  const instruction = make('div', 'instruction');
+  instruction.append(make('p', 'instruction-label', stage.instruction.kind), make('blockquote', '', stage.instruction.text),
+    make('p', 'source-line', stage.instruction.source));
+  const images = make('div', 'round-images' + (stage.images.length === 1 ? ' single-image' : ''));
+  images.append(...stage.images.map(item => figure(item)));
+  node.append(header, instruction, make('p', 'round-description', stage.description), images);
+  return node;
 }
 function renderDetail(asset) {
-  app.replaceChildren(link('← 返回过程版本', './index.html', 'back'));
-  const head = make('section', 'detail-head'), title = make('div'), actions = make('div', 'actions');
-  title.append(make('p', 'eyebrow', 'Process archive / ' + asset.version.toUpperCase()), make('h1', '', asset.name), make('p', 'detail-desc', asset.description));
-  const other = ASSETS.find(item => item.id !== asset.id);
-  actions.append(link('查看 ' + other.version.toUpperCase() + ' →', '?asset=' + other.id, 'primary secondary'));
-  head.append(title, actions);
-  const meta = make('section', 'meta');
-  [['版本', asset.version.toUpperCase()], ['记录内容', asset.title], ['图片', asset.images.length + ' 张']].forEach(([label, value]) => {
-    const item = make('div'); item.append(make('span', '', label), make('strong', '', value)); meta.append(item);
-  });
-  const nav = make('nav', 'section-nav'); nav.setAttribute('aria-label', '版本内容导航');
-  nav.append(link('01 / 过程图片', '#process'), link('02 / 原始参考', '#reference'));
-  const process = section('process', '01 / Iteration', asset.title), grid = make('div', 'io-grid');
-  asset.images.forEach((item, i) => grid.append(figure(asset, item, i < 2))); process.append(grid);
-  const reference = section('reference', '02 / Reference', '原始参考'), referenceGrid = make('div', 'io-grid');
-  const ref = DATA.reference, refFigure = make('figure', 'panel'), refLink = link('', ref.path, 'image-frame');
-  refLink.append(image(ref.path, '用户提供的 SOLWAVE 微波炉参考照片', ref));
-  const refCaption = make('figcaption');
-  refCaption.append(make('strong', '', '原始参考照片'), document.createTextNode('用于外观比例、材质和可见部件布局。'));
-  refFigure.append(refLink, refCaption);
-  const notes = make('article', 'panel input-notes');
-  notes.append(make('h3', '', '本轮记录'), make('p', '', asset.description), make('p', '', '参考照片没有给出尺寸，也未展示内部和背面；尺寸及隐藏结构采用工程补全。开门画面为编辑展示姿态。'));
-  referenceGrid.append(refFigure, notes); reference.append(referenceGrid);
+  const header = make('header', 'detail-head');
+  header.append(make('p', 'eyebrow', asset.method), make('h1', '', asset.name), make('p', 'lead', asset.description));
+  const overview = make('div', 'overview'); overview.id = 'input-output';
+  const input = section('input', '01 / Input', '输入参考');
+  input.append(...asset.input.map(item => figure(item, true)));
+  const output = section('output', '02 / Output', '最终结果');
+  const outputImages = make('div', 'output-images');
+  outputImages.append(...asset.output.map(item => figure(item, true))); output.append(outputImages);
+  overview.append(input, output);
+  const navigation = make('nav', 'section-nav'); navigation.setAttribute('aria-label', '资产页内容导航');
+  navigation.append(link('Input / Output ↑', '#input-output'), ...asset.process.map(stage => link(stage.label, '#' + stage.id)), link('来源与记录', '#record'));
+  const process = section('process', '03 / Process', '详细过程');
+  process.append(make('p', 'section-description', '按修改顺序保存过程图片、提示词和编辑说明。'));
+  if (asset.references.length) {
+    const references = make('section', 'references');
+    references.append(make('h3', '', '参考收集 · 说明书与结构资料'));
+    const grid = make('div', 'reference-grid'); grid.append(...asset.references.map(item => figure(item)));
+    references.append(grid); process.append(references);
+  }
+  const timeline = make('div', 'timeline' + (asset.process.every(stage => stage.images.length === 1) ? ' compact' : ''));
+  timeline.append(...asset.process.map(round)); process.append(timeline);
+  const record = section('record', '04 / Record', '来源与记录');
+  record.append(make('p', 'record-source', asset.sourceLabel), make('p', 'record-note', asset.note));
+  const download = link('保存图片索引与提示词 ↓', asset.recordPath, 'record-download');
+  download.setAttribute('download', asset.id + '-record.json'); record.append(download);
   const footer = make('footer', 'page-footer');
-  footer.append(make('span', '', 'SOLWAVE / ' + asset.version.toUpperCase() + ' / 过程图片'), link('返回过程版本 ↑', './index.html'));
-  app.append(head, meta, nav, process, reference, footer);
-  reportButton.href = TALLY_FORM_URL + '?asset_id=' + encodeURIComponent(asset.id);
-  document.title = asset.name + ' · 过程记录';
+  footer.append(make('span', '', 'Articulated Assets / ' + asset.name), link('回到顶部 ↑', '#input-output'));
+  app.replaceChildren(link('← 返回资产库', './index.html', 'back'), header, overview, navigation, process, record, footer);
+  reportButton.href = 'https://tally.so/r/2javLg?asset_id=' + encodeURIComponent(asset.id);
+  document.title = asset.name + ' · Articulated Assets';
 }
 function renderNotFound() {
-  app.replaceChildren(make('p', 'eyebrow', 'Process archive'), make('h1', '', '这里记录 v1 与 v2。'), make('p', 'lead', '请选择一个过程版本查看图片。'), link('返回过程版本', './index.html', 'primary'));
+  app.replaceChildren(make('h1', '', '未找到这个资产'), link('返回资产库 →', './index.html', 'detail-link'));
 }
-const current = new URLSearchParams(location.search).get('asset');
-if (current) {
-  const found = ASSETS.find(asset => asset.id === current);
-  if (found) renderDetail(found); else renderNotFound();
-} else renderHome();
+const requested = new URLSearchParams(location.search).get('asset');
+const id = DATA.aliases[requested] || requested;
+if (!id) renderHome();
+else {
+  const asset = DATA.assets.find(item => item.id === id);
+  if (asset) {
+    if (requested !== id) history.replaceState(null, '', '?asset=' + id + location.hash);
+    renderDetail(asset);
+  } else renderNotFound();
+}
