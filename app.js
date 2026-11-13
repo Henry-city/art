@@ -147,11 +147,11 @@ function motionComparison(motion) {
 function renderDetail(asset) {
   const header = make('header', 'detail-head');
   header.append(make('h1', '', asset.name));
-  const overview = make('div', 'overview'); overview.id = 'input-output';
+  const overview = make('div', 'overview' + (asset.output.length === 1 ? ' paired' : '')); overview.id = 'input-output';
   const input = section('input', 'Input');
   input.append(...asset.input.map(item => figure(item, true)));
   const output = section('output', 'Output');
-  const outputImages = make('div', 'output-images');
+  const outputImages = make('div', 'output-images' + (asset.output.length === 1 ? ' single-output' : ''));
   outputImages.append(...asset.output.map(item => figure(item, true))); output.append(outputImages);
   overview.append(input, output);
   const navigation = make('nav', 'section-nav'); navigation.setAttribute('aria-label', '资产页内容导航');
