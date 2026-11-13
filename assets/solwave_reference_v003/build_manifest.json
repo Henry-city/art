@@ -1,0 +1,1394 @@
+{
+  "schema_version": "phyart.photo-model-build/1.0",
+  "asset_id": "MW-SOLWAVE-REF-001",
+  "blender_version": "5.2.0 LTS",
+  "revision": "v003",
+  "revision_basis": "User correction: recessed dark control insert; continuous cavity-to-cabinet transition with no visible assembly gap",
+  "parent_delivery": "outputs/solwave_reference_v002",
+  "geometry_sha256": "7f5ea9e109cad9103ca968a03f90ac562fd2b7ceaf48b78f96e2d2a03ad88734",
+  "appearance_sha256": "759501f7a907469408f3220993fdb54e5879788d073257d45b987860f339c8ae",
+  "script_sha256": "1fb03a3c4e102b8525ab8db7b25612e3ea32f5e58b88f77701e9790a8a5e83dc",
+  "reference_sha256": "5d6c8a3aa1742d4cfab93695c618c04df790ce0ac156d5a659a34bc5a126a3ee",
+  "units": "m",
+  "front": "-Y",
+  "up": "Z",
+  "part_object_count": 193,
+  "parts": [
+    {
+      "name": "Shell_RoundedCabinet",
+      "semantic_id": "Shell_RoundedCabinet",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Fascia",
+      "semantic_id": "Vent_Fascia",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_0",
+      "semantic_id": "Vent_Baffle_0_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_1",
+      "semantic_id": "Vent_Baffle_0_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_2",
+      "semantic_id": "Vent_Baffle_0_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_3",
+      "semantic_id": "Vent_Baffle_0_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_4",
+      "semantic_id": "Vent_Baffle_0_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_5",
+      "semantic_id": "Vent_Baffle_0_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_6",
+      "semantic_id": "Vent_Baffle_0_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_7",
+      "semantic_id": "Vent_Baffle_0_7",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_0_8",
+      "semantic_id": "Vent_Baffle_0_8",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_0",
+      "semantic_id": "Vent_Baffle_1_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_1",
+      "semantic_id": "Vent_Baffle_1_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_2",
+      "semantic_id": "Vent_Baffle_1_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_3",
+      "semantic_id": "Vent_Baffle_1_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_4",
+      "semantic_id": "Vent_Baffle_1_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_5",
+      "semantic_id": "Vent_Baffle_1_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_6",
+      "semantic_id": "Vent_Baffle_1_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_7",
+      "semantic_id": "Vent_Baffle_1_7",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Baffle_1_8",
+      "semantic_id": "Vent_Baffle_1_8",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Vent_Plenum_Back",
+      "semantic_id": "Vent_Plenum_Back",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Recessed_Base_Shadow",
+      "semantic_id": "Recessed_Base_Shadow",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Foot_-0.224_-0.173",
+      "semantic_id": "Foot_-0.224_-0.173",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Foot_-0.224_0.173",
+      "semantic_id": "Foot_-0.224_0.173",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Foot_0.224_-0.173",
+      "semantic_id": "Foot_0.224_-0.173",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Foot_0.224_0.173",
+      "semantic_id": "Foot_0.224_0.173",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Control_StainlessFace",
+      "semantic_id": "Control_StainlessFace",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Control_Label_BlueGrey",
+      "semantic_id": "Control_Label_BlueGrey",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Brand_SOLWAVE",
+      "semantic_id": "Brand_SOLWAVE",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Brand_Underline",
+      "semantic_id": "Brand_Underline",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Title",
+      "semantic_id": "Guide_Title",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_0",
+      "semantic_id": "Guide_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Value_0",
+      "semantic_id": "Guide_Value_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Rule_0",
+      "semantic_id": "Guide_Rule_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Guide_1",
+      "semantic_id": "Guide_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Value_1",
+      "semantic_id": "Guide_Value_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Rule_1",
+      "semantic_id": "Guide_Rule_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Guide_2",
+      "semantic_id": "Guide_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Value_2",
+      "semantic_id": "Guide_Value_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Rule_2",
+      "semantic_id": "Guide_Rule_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Guide_3",
+      "semantic_id": "Guide_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Value_3",
+      "semantic_id": "Guide_Value_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Rule_3",
+      "semantic_id": "Guide_Rule_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Guide_4",
+      "semantic_id": "Guide_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Value_4",
+      "semantic_id": "Guide_Value_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Guide_Rule_4",
+      "semantic_id": "Guide_Rule_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Instruction_0",
+      "semantic_id": "Instruction_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_1",
+      "semantic_id": "Instruction_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_2",
+      "semantic_id": "Instruction_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_3",
+      "semantic_id": "Instruction_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_4",
+      "semantic_id": "Instruction_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_5",
+      "semantic_id": "Instruction_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_6",
+      "semantic_id": "Instruction_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_7",
+      "semantic_id": "Instruction_7",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Instruction_8",
+      "semantic_id": "Instruction_8",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "FONT"
+    },
+    {
+      "name": "Rear_Screw_-0.259_0.04",
+      "semantic_id": "Rear_Screw_-0.259_0.04",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Rear_Screw_-0.259_0.321",
+      "semantic_id": "Rear_Screw_-0.259_0.321",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Rear_Screw_0.259_0.04",
+      "semantic_id": "Rear_Screw_0.259_0.04",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Rear_Screw_0.259_0.321",
+      "semantic_id": "Rear_Screw_0.259_0.321",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Latch_Receiver_0.115",
+      "semantic_id": "Latch_Receiver_0.115",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Latch_Receiver_0.275",
+      "semantic_id": "Latch_Receiver_0.275",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_0",
+      "semantic_id": "Interior_Vent_0_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_1",
+      "semantic_id": "Interior_Vent_0_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_2",
+      "semantic_id": "Interior_Vent_0_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_3",
+      "semantic_id": "Interior_Vent_0_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_4",
+      "semantic_id": "Interior_Vent_0_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_5",
+      "semantic_id": "Interior_Vent_0_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_6",
+      "semantic_id": "Interior_Vent_0_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_7",
+      "semantic_id": "Interior_Vent_0_7",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_8",
+      "semantic_id": "Interior_Vent_0_8",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_0_9",
+      "semantic_id": "Interior_Vent_0_9",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_0",
+      "semantic_id": "Interior_Vent_1_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_1",
+      "semantic_id": "Interior_Vent_1_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_2",
+      "semantic_id": "Interior_Vent_1_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_3",
+      "semantic_id": "Interior_Vent_1_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_4",
+      "semantic_id": "Interior_Vent_1_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_5",
+      "semantic_id": "Interior_Vent_1_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_6",
+      "semantic_id": "Interior_Vent_1_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_7",
+      "semantic_id": "Interior_Vent_1_7",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_8",
+      "semantic_id": "Interior_Vent_1_8",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_1_9",
+      "semantic_id": "Interior_Vent_1_9",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_0",
+      "semantic_id": "Interior_Vent_2_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_1",
+      "semantic_id": "Interior_Vent_2_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_2",
+      "semantic_id": "Interior_Vent_2_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_3",
+      "semantic_id": "Interior_Vent_2_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_4",
+      "semantic_id": "Interior_Vent_2_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_5",
+      "semantic_id": "Interior_Vent_2_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_6",
+      "semantic_id": "Interior_Vent_2_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_7",
+      "semantic_id": "Interior_Vent_2_7",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_8",
+      "semantic_id": "Interior_Vent_2_8",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_2_9",
+      "semantic_id": "Interior_Vent_2_9",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_0",
+      "semantic_id": "Interior_Vent_3_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_1",
+      "semantic_id": "Interior_Vent_3_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_2",
+      "semantic_id": "Interior_Vent_3_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_3",
+      "semantic_id": "Interior_Vent_3_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_4",
+      "semantic_id": "Interior_Vent_3_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_5",
+      "semantic_id": "Interior_Vent_3_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_6",
+      "semantic_id": "Interior_Vent_3_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_7",
+      "semantic_id": "Interior_Vent_3_7",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_8",
+      "semantic_id": "Interior_Vent_3_8",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Interior_Vent_3_9",
+      "semantic_id": "Interior_Vent_3_9",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Stainless_Frame",
+      "semantic_id": "Door_Stainless_Frame",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Silver_Window_Reveal",
+      "semantic_id": "Door_Silver_Window_Reveal",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Charcoal_Window_Bezel",
+      "semantic_id": "Door_Charcoal_Window_Bezel",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Inside_ChokeFrame",
+      "semantic_id": "Door_Inside_ChokeFrame",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Perimeter_Seal",
+      "semantic_id": "Door_Perimeter_Seal",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Perforated_SafetyScreen",
+      "semantic_id": "Door_Perforated_SafetyScreen",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Outer_Glass",
+      "semantic_id": "Door_Outer_Glass",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Inner_Glass",
+      "semantic_id": "Door_Inner_Glass",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Handle_Rear_Inlay",
+      "semantic_id": "Handle_Rear_Inlay",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Handle_Brushed_Grip",
+      "semantic_id": "Handle_Brushed_Grip",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Handle_Bottom_Mount",
+      "semantic_id": "Handle_Bottom_Mount",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Handle_Mount_Gasket_-1",
+      "semantic_id": "Handle_Mount_Gasket_-1",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Handle_Top_Mount",
+      "semantic_id": "Handle_Top_Mount",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Handle_Mount_Gasket_1",
+      "semantic_id": "Handle_Mount_Gasket_1",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Hinge_Pin_0.072",
+      "semantic_id": "Hinge_Pin_0.072",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Hinge_Knuckle_0.072",
+      "semantic_id": "Door_Hinge_Knuckle_0.072",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Hinge_Pin_0.318",
+      "semantic_id": "Hinge_Pin_0.318",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Hinge_Knuckle_0.318",
+      "semantic_id": "Door_Hinge_Knuckle_0.318",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Latch_Hook_0.115",
+      "semantic_id": "Door_Latch_Hook_0.115",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Door_Latch_Hook_0.275",
+      "semantic_id": "Door_Latch_Hook_0.275",
+      "assembly": "ASSEMBLY_Door_PIVOT_Z",
+      "evidence": "engineering_completion",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Shadow_Ring",
+      "semantic_id": "Dial_Shadow_Ring",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Knurled_Body",
+      "semantic_id": "Dial_Knurled_Body",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Stainless_Cap",
+      "semantic_id": "Dial_Stainless_Cap",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_00",
+      "semantic_id": "Dial_Grip_Rib_00",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_01",
+      "semantic_id": "Dial_Grip_Rib_01",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_02",
+      "semantic_id": "Dial_Grip_Rib_02",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_03",
+      "semantic_id": "Dial_Grip_Rib_03",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_04",
+      "semantic_id": "Dial_Grip_Rib_04",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_05",
+      "semantic_id": "Dial_Grip_Rib_05",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_06",
+      "semantic_id": "Dial_Grip_Rib_06",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_07",
+      "semantic_id": "Dial_Grip_Rib_07",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_08",
+      "semantic_id": "Dial_Grip_Rib_08",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_09",
+      "semantic_id": "Dial_Grip_Rib_09",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_10",
+      "semantic_id": "Dial_Grip_Rib_10",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_11",
+      "semantic_id": "Dial_Grip_Rib_11",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_12",
+      "semantic_id": "Dial_Grip_Rib_12",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_13",
+      "semantic_id": "Dial_Grip_Rib_13",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_14",
+      "semantic_id": "Dial_Grip_Rib_14",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_15",
+      "semantic_id": "Dial_Grip_Rib_15",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_16",
+      "semantic_id": "Dial_Grip_Rib_16",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_17",
+      "semantic_id": "Dial_Grip_Rib_17",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_18",
+      "semantic_id": "Dial_Grip_Rib_18",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_19",
+      "semantic_id": "Dial_Grip_Rib_19",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_20",
+      "semantic_id": "Dial_Grip_Rib_20",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_21",
+      "semantic_id": "Dial_Grip_Rib_21",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_22",
+      "semantic_id": "Dial_Grip_Rib_22",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_23",
+      "semantic_id": "Dial_Grip_Rib_23",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_24",
+      "semantic_id": "Dial_Grip_Rib_24",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_25",
+      "semantic_id": "Dial_Grip_Rib_25",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_26",
+      "semantic_id": "Dial_Grip_Rib_26",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_27",
+      "semantic_id": "Dial_Grip_Rib_27",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_28",
+      "semantic_id": "Dial_Grip_Rib_28",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_29",
+      "semantic_id": "Dial_Grip_Rib_29",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_30",
+      "semantic_id": "Dial_Grip_Rib_30",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_31",
+      "semantic_id": "Dial_Grip_Rib_31",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_32",
+      "semantic_id": "Dial_Grip_Rib_32",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_33",
+      "semantic_id": "Dial_Grip_Rib_33",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_34",
+      "semantic_id": "Dial_Grip_Rib_34",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_35",
+      "semantic_id": "Dial_Grip_Rib_35",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_36",
+      "semantic_id": "Dial_Grip_Rib_36",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_37",
+      "semantic_id": "Dial_Grip_Rib_37",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_38",
+      "semantic_id": "Dial_Grip_Rib_38",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Grip_Rib_39",
+      "semantic_id": "Dial_Grip_Rib_39",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Dial_Indicator",
+      "semantic_id": "Dial_Indicator",
+      "assembly": "ASSEMBLY_TimerKnob",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_00",
+      "semantic_id": "Timer_Tick_00",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_01",
+      "semantic_id": "Timer_Tick_01",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_02",
+      "semantic_id": "Timer_Tick_02",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_03",
+      "semantic_id": "Timer_Tick_03",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_04",
+      "semantic_id": "Timer_Tick_04",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_05",
+      "semantic_id": "Timer_Tick_05",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_06",
+      "semantic_id": "Timer_Tick_06",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_07",
+      "semantic_id": "Timer_Tick_07",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_08",
+      "semantic_id": "Timer_Tick_08",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_09",
+      "semantic_id": "Timer_Tick_09",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_10",
+      "semantic_id": "Timer_Tick_10",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_11",
+      "semantic_id": "Timer_Tick_11",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_12",
+      "semantic_id": "Timer_Tick_12",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_13",
+      "semantic_id": "Timer_Tick_13",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_14",
+      "semantic_id": "Timer_Tick_14",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_15",
+      "semantic_id": "Timer_Tick_15",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_16",
+      "semantic_id": "Timer_Tick_16",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_17",
+      "semantic_id": "Timer_Tick_17",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_18",
+      "semantic_id": "Timer_Tick_18",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_19",
+      "semantic_id": "Timer_Tick_19",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Tick_20",
+      "semantic_id": "Timer_Tick_20",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "MESH"
+    },
+    {
+      "name": "Timer_Number_0",
+      "semantic_id": "Timer_Number_0",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Timer_Number_1",
+      "semantic_id": "Timer_Number_1",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Timer_Number_2",
+      "semantic_id": "Timer_Number_2",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Timer_Number_3",
+      "semantic_id": "Timer_Number_3",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Timer_Number_4",
+      "semantic_id": "Timer_Number_4",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Timer_Number_5",
+      "semantic_id": "Timer_Number_5",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    },
+    {
+      "name": "Timer_Number_6",
+      "semantic_id": "Timer_Number_6",
+      "assembly": "ASSEMBLY_Cabinet",
+      "evidence": "photo_visible",
+      "type": "FONT"
+    }
+  ],
+  "source_templates_consulted": [
+    "templates/microwave/mw_diversity_v002/structure/schema.json",
+    "templates/microwave/appearance_v001/README.md",
+    "templates/microwave/mw_functional_v003/README.md"
+  ],
+  "reuse_scope": "Parameter naming, geometry/material separation, semantic hierarchy and provenance conventions. No legacy product meshes or physics results reused.",
+  "physics": {
+    "status": "not_run",
+    "joint_count": 0,
+    "rigidbody_count": 0,
+    "claim": "Blender visual reconstruction only"
+  },
+  "limitations": [
+    "Absolute dimensions estimated; reference photo contains no scale.",
+    "Rear, interior, hinge and latch detail are engineering completion.",
+    "Small control legends are layout approximations.",
+    "USD Preview Surface does not reproduce procedural brushing exactly; Blender is authoritative appearance."
+  ],
+  "usd_export_options": {
+    "filepath": "D:\\generate\\physics\\phyart\\outputs\\solwave_reference_v003\\microwave_solwave_visual.usdc",
+    "selected_objects_only": true,
+    "export_materials": true,
+    "generate_preview_surface": true,
+    "export_custom_properties": true
+  }
+}

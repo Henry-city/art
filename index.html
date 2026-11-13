@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Simulation-ready articulated asset gallery">
-  <title>Articulated Asset Gallery</title>
+  <meta name="description" content="SOLWAVE v003：参考输入、Blender 制作过程、面板与内腔近景、模型输出与下载。">
+  <title>Articulated Asset Gallery · SOLWAVE v003</title>
   <style>
     :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#090c13;color:#eff2f8}
     *{box-sizing:border-box} body{margin:0;min-width:320px;background:radial-gradient(circle at 90% -20%,#174473,transparent 34rem),radial-gradient(circle at 5% 15%,#242158,transparent 25rem),#090c13}
@@ -15,35 +15,12 @@
     .back{margin:0 0 2.2rem;color:#b4cbf8;font-size:.9rem;text-decoration:none}.detail-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;padding-bottom:1.55rem;border-bottom:1px solid #ffffff20}.detail-head h1{margin-bottom:.7rem;font-size:clamp(2.35rem,5vw,4.3rem)}.detail-desc{max-width:620px;margin-bottom:0;color:#c4cede;line-height:1.7}.actions{display:grid;justify-items:end;gap:.75rem}.primary{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.68rem .9rem;border-radius:9px;background:#e8efff;color:#13213a;font-size:.86rem;font-weight:800;text-decoration:none}.primary:hover{background:#b9d2ff}.meta{display:grid;grid-template-columns:repeat(2,1fr);overflow:hidden;margin-top:1.35rem;border:1px solid #ffffff20;border-radius:13px;background:#111827cc}.meta div{display:grid;gap:.32rem;padding:1rem 1.15rem}.meta div+div{border-left:1px solid #ffffff20}.meta span{color:#9caac1;font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.io{margin-top:2.4rem}.io-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.panel{overflow:hidden;border:1px solid #ffffff22;border-radius:16px;background:#111827d9}.panel-head{display:flex;align-items:center;gap:.65rem;padding:1rem 1.1rem;border-bottom:1px solid #ffffff20}.panel-head h3{margin:0;font-size:1rem}.step{color:#9abaff;font-size:.72rem;font-weight:800;letter-spacing:.1em}.frame{position:relative;display:grid;min-height:290px;place-items:center;overflow:hidden;background:linear-gradient(140deg,#1a283b,#101722)}.frame:before{content:"";position:absolute;width:37%;height:47%;border:1px solid #c6dfff88;border-radius:8px;transform:perspective(300px) rotateX(48deg) rotateZ(-20deg)}.frame.input:before{width:35%;height:55%;border-radius:4px;transform:none;box-shadow:0 0 0 14px #c6dfff0e}.frame img,.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.placeholder{position:relative;z-index:1;color:#c3d0e3;font-size:.84rem}.panel p{margin:0;padding:.9rem 1.1rem 1rem;color:#c0cada;font-size:.9rem}.empty{padding:1rem;border:1px dashed #ffffff4a;border-radius:12px;color:#c2cede}
     @media(max-width:680px){.shell{width:min(100% - 2rem,1120px)}main{padding-top:3.5rem}.hero{margin-bottom:3.3rem}.section-head,.detail-head{align-items:start;flex-direction:column}.actions{justify-items:start}.filters label{flex:1 1 100%}.meta,.io-grid{grid-template-columns:1fr}.meta div+div{border-left:0;border-top:1px solid #ffffff20}.frame{min-height:235px}}
   </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="shell topbar"><a class="brand" href="./">Articulated Assets</a><span class="subtle">Simulation-ready gallery</span></header>
+  <header class="shell topbar"><a class="brand" href="./index.html">Articulated Assets</a><span class="subtle">Reference → Process → Output</span></header>
   <main id="app" class="shell"></main>
-  <script>
-    var TALLY_FORM_URL="https://tally.so/r/2javLg";
-    var ASSETS=[{
-      id:"microwave_004",
-      name:"Microwave 004",
-      objectType:"Microwave",
-      manufacturingMethod:"Agentic Blender modeling",
-      description:"A hinged microwave with a simulation-ready door assembly.",
-      input:{label:"Single reference image"},
-      output:{label:"Articulated mesh, joint structure, and animation"}
-    }];
-    var app=document.getElementById("app");
-    function make(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
-    function issueUrl(id){return TALLY_FORM_URL+"?asset_id="+encodeURIComponent(id)}
-    function detailUrl(id){return "?asset="+encodeURIComponent(id)}
-    function unique(field){var values=ASSETS.map(function(a){return a[field]}).filter(Boolean);return values.filter(function(v,i){return values.indexOf(v)===i}).sort()}
-    function option(value,text){var o=document.createElement("option");o.value=value;o.textContent=text;return o}
-    function thumbnail(asset){var link=make("a","thumb");link.href=detailUrl(asset.id);link.setAttribute("aria-label","Open details for "+asset.name);link.append(make("span","state","OUTPUT"));if(asset.thumbnail){link.style.backgroundImage='url("'+asset.thumbnail+'")'}else{link.append(make("span","machine"))}link.append(make("span","caption",asset.output&&asset.output.label||"Generated articulated asset"));return link}
-    function card(asset){var article=make("article","card");article.append(thumbnail(asset));var body=make("div","body"),tags=make("div","tags");tags.append(make("span","tag",asset.objectType||"Uncategorized"));tags.append(make("span","tag method",asset.manufacturingMethod||"Unspecified"));body.append(tags,make("h3","",asset.name||asset.id),make("p","desc",asset.description||""));var footer=make("div","footer"),id=make("code","",asset.id),link=make("a","detail-link","View details →");link.href=detailUrl(asset.id);footer.append(id,link);body.append(footer);article.append(body);return article}
-    function renderHome(){app.replaceChildren();var hero=make("section","hero");hero.append(make("p","eyebrow","Sim-ready articulated asset gallery"),make("h1","","From reference input to articulated output."),make("p","lead","Browse each asset as a thumbnail, inspect its reference input and generated output on the detail page, and report an issue tied to the exact asset ID."));app.append(hero);var section=make("section","");var head=make("div","section-head"),headText=make("div","");headText.append(make("p","eyebrow","Asset browser"),make("h2","","Available assets"));var count=make("p","count","");head.append(headText,count);var filters=make("div","filters");var typeLabel=make("label","");typeLabel.append(make("span","","Object type"));var typeSelect=make("select","");typeSelect.append(option("","All object types"));unique("objectType").forEach(function(v){typeSelect.append(option(v,v))});typeLabel.append(typeSelect);var methodLabel=make("label","");methodLabel.append(make("span","","Manufacturing method"));var methodSelect=make("select","");methodSelect.append(option("","All manufacturing methods"));unique("manufacturingMethod").forEach(function(v){methodSelect.append(option(v,v))});methodLabel.append(methodSelect);var clear=make("button","clear","Clear filters");clear.type="button";filters.append(typeLabel,methodLabel,clear);var grid=make("div","grid"),empty=make("p","empty","No asset matches these filters.");empty.hidden=true;function draw(){var shown=ASSETS.filter(function(asset){return(!typeSelect.value||asset.objectType===typeSelect.value)&&(!methodSelect.value||asset.manufacturingMethod===methodSelect.value)});grid.replaceChildren();shown.forEach(function(asset){grid.append(card(asset))});count.textContent=shown.length+" of "+ASSETS.length+" asset"+(ASSETS.length===1?"":"s");empty.hidden=shown.length!==0}typeSelect.onchange=draw;methodSelect.onchange=draw;clear.onclick=function(){typeSelect.value="";methodSelect.value="";draw()};section.append(head,filters,grid,empty);app.append(section);draw()}
-    function media(frame,item,fallback,kind){frame.className="frame "+kind;if(item&&item.video){var v=document.createElement("video");v.src=item.video;v.controls=true;v.muted=true;v.playsInline=true;frame.append(v)}else if(item&&item.image){var image=document.createElement("img");image.src=item.image;image.alt=item.label||fallback;frame.append(image)}else{frame.append(make("span","placeholder",fallback))}}
-    function panel(num,title,item,fallback,kind){var article=make("article","panel"),head=make("div","panel-head");head.append(make("span","step",num),make("h3","",title));var frame=make("div","");media(frame,item,fallback,kind);article.append(head,frame,make("p","",item&&item.label||fallback));return article}
-    function renderDetail(asset){app.replaceChildren();var back=make("a","back","← Back to gallery");back.href="./";app.append(back);var head=make("section","detail-head"),titleBox=make("div","");titleBox.append(make("p","eyebrow","Asset detail"),make("h1","",asset.name||asset.id),make("p","detail-desc",asset.description||""));var actions=make("div","actions");actions.append(make("code","",asset.id));var report=make("a","primary","Report Issue");report.href=issueUrl(asset.id);report.setAttribute("aria-label","Report an issue for "+asset.id);actions.append(report);head.append(titleBox,actions);var meta=make("section","meta");var left=make("div","");left.append(make("span","","Object type"),make("strong","",asset.objectType||"Uncategorized"));var right=make("div","");right.append(make("span","","Manufacturing method"),make("strong","",asset.manufacturingMethod||"Unspecified"));meta.append(left,right);var io=make("section","io"),ioHead=make("div","section-head"),ioText=make("div","");ioText.append(make("p","eyebrow","Input / output"),make("h2","","Reference to generated asset"));ioHead.append(ioText);var grid=make("div","io-grid");grid.append(panel("01","Input",asset.input,"Reference input","input"),panel("02","Output",asset.output,"Generated output","output"));io.append(ioHead,grid);app.append(head,meta,io);document.title=(asset.name||asset.id)+" | Articulated Asset Gallery"}
-    function renderNotFound(){app.replaceChildren();var s=make("section","");s.append(make("p","eyebrow","Asset unavailable"),make("h1","","We could not find that asset."),make("p","lead","Return to the gallery and select an available item."));var a=make("a","primary","Open gallery");a.href="./";s.append(a);app.append(s)}
-    var current=new URLSearchParams(location.search).get("asset");if(current){var found=ASSETS.find(function(a){return a.id===current});if(found)renderDetail(found);else renderNotFound()}else renderHome();
-  </script>
+  <noscript><p class="shell">请启用 JavaScript 查看资产库，或打开 <a href="assets/solwave_reference_v003/index.html">SOLWAVE v003 图文审阅页</a>。</p></noscript>
+  <script src="app.js"></script>
 </body>
 </html>
