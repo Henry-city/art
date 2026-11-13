@@ -1,4 +1,4 @@
-# Keep the static gallery image-only and small.
+# Keep native assets and original videos out of the lightweight gallery.
 *.blend
 *.blend1
 *.usd
@@ -12,3 +12,5 @@
 *.gltf
 *.mp4
 *.mov
+!assets/microwave-video/*/input.mp4
+!assets/microwave-video/*/output.mp4

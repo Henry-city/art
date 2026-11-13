@@ -34,11 +34,11 @@ function section(id, title) {
   const head = make('div', 'section-head');
   head.append(heading); node.append(head); return node;
 }
-function card(asset) {
+function card(asset, index) {
   const node = make('article', 'card');
   const thumb = link('', '?asset=' + asset.id, 'thumb');
   thumb.setAttribute('aria-label', '查看资产：' + asset.name);
-  thumb.append(image(asset.thumbnail, true));
+  thumb.append(image(asset.thumbnail, index < 2));
   const body = make('div', 'card-body');
   const title = make('h2');
   title.append(link(asset.name, '?asset=' + asset.id, 'asset-title'));
@@ -64,6 +64,86 @@ function round(stage) {
   node.append(header, instruction, images);
   return node;
 }
+function motionComparison(motion) {
+  const node = section('motion', '动画');
+  const pair = make('div', 'motion-pair');
+  const videos = [motion.input, motion.output].map((item, index) => {
+    const panel = make('figure', 'panel');
+    const video = make('video'); video.poster = item.poster;
+    video.preload = 'none'; video.muted = true; video.playsInline = true;
+    video.width = item.width; video.height = item.height;
+    video.setAttribute('aria-label', index ? 'Output 动画' : 'Input 视频');
+    panel.append(video, make('figcaption', '', index ? 'Output' : 'Input'));
+    pair.append(panel); return video;
+  });
+  const controls = make('div', 'motion-controls');
+  const play = make('button', '', '播放');
+  const previous = make('button', '', '←'); previous.setAttribute('aria-label', '上一帧');
+  const next = make('button', '', '→'); next.setAttribute('aria-label', '下一帧');
+  const seek = make('input'); seek.type = 'range'; seek.min = 0;
+  seek.max = motion.frameCount - 1; seek.value = 0; seek.step = 1;
+  seek.setAttribute('aria-label', '逐帧查看');
+  const label = make('output', 'motion-position');
+  const [numerator, denominator = 1] = motion.frameRate.split('/').map(Number);
+  const fps = numerator / denominator; let ready; let playing = false; let command = 0;
+  const position = frame => {
+    frame = Math.max(0, Math.min(motion.frameCount - 1, frame));
+    seek.value = frame;
+    const segment = motion.segments.find(s => frame >= s.outputStart && frame < s.outputStart + s.count);
+    const sourceFrame = segment ? segment.sourceStart + frame - segment.outputStart : frame;
+    label.textContent = `${frame + 1} / ${motion.frameCount} · 原片帧 ${sourceFrame}`;
+  };
+  const load = () => {
+    if (ready) return ready;
+    ready = Promise.all(videos.map((video, index) => new Promise((resolve, reject) => {
+      if (video.readyState >= 1 && !video.error) { resolve(); return; }
+      const cleanup = () => {
+        video.removeEventListener('loadedmetadata', loaded);
+        video.removeEventListener('error', failed);
+      };
+      const loaded = () => { cleanup(); resolve(); };
+      const failed = () => { cleanup(); reject(new Error('Video unavailable')); };
+      video.addEventListener('loadedmetadata', loaded);
+      video.addEventListener('error', failed);
+      video.src = (index ? motion.output : motion.input).path;
+      video.load();
+    }))).catch(error => { ready = undefined; throw error; });
+    return ready;
+  };
+  const pause = () => { command++; playing = false; videos.forEach(v => v.pause()); play.textContent = '播放'; };
+  const go = async frame => {
+    pause(); position(frame); const requested = command;
+    try { await load(); if (requested === command) videos.forEach(v => { v.currentTime = (Number(seek.value) + 0.05) / fps; }); }
+    catch { label.textContent = '视频加载失败'; }
+  };
+  play.addEventListener('click', async () => {
+    if (playing) { pause(); return; }
+    const requested = ++command; play.disabled = true;
+    try {
+      await load();
+      if (requested !== command) return;
+      if (videos[0].ended) videos.forEach(v => { v.currentTime = 0; });
+      playing = true; play.textContent = '暂停';
+      await Promise.all(videos.map(v => v.play()));
+    } catch { if (requested === command) { pause(); label.textContent = '视频加载失败，点击重试'; } }
+    finally { play.disabled = false; }
+  });
+  previous.addEventListener('click', () => go(Number(seek.value) - 1));
+  next.addEventListener('click', () => go(Number(seek.value) + 1));
+  seek.addEventListener('input', () => go(Number(seek.value)));
+  const sync = time => {
+    if (!playing) return;
+    position(Math.round(time * fps));
+    if (Math.abs(videos[1].currentTime - time) > 1.5 / fps) videos[1].currentTime = time;
+  };
+  if (videos[0].requestVideoFrameCallback) {
+    const tick = (_, metadata) => { sync(metadata.mediaTime); videos[0].requestVideoFrameCallback(tick); };
+    videos[0].requestVideoFrameCallback(tick);
+  } else videos[0].addEventListener('timeupdate', () => sync(videos[0].currentTime));
+  videos[0].addEventListener('ended', pause);
+  controls.append(play, previous, seek, next, label); position(0);
+  node.append(pair, controls); return node;
+}
 function renderDetail(asset) {
   const header = make('header', 'detail-head');
   header.append(make('h1', '', asset.name));
@@ -76,6 +156,7 @@ function renderDetail(asset) {
   overview.append(input, output);
   const navigation = make('nav', 'section-nav'); navigation.setAttribute('aria-label', '资产页内容导航');
   navigation.append(link('Input / Output ↑', '#input-output'), ...asset.process.map(stage => link(stage.label, '#' + stage.id)));
+  if (asset.motion) navigation.prepend(link('动画', '#motion'));
   const process = section('process', '详细过程');
   if (asset.references.length) {
     const references = make('section', 'references');
@@ -89,7 +170,8 @@ function renderDetail(asset) {
   download.setAttribute('download', asset.id + '-record.json');
   const footer = make('footer', 'page-footer');
   footer.append(download, link('回到顶部 ↑', '#input-output'));
-  app.replaceChildren(link('← 返回', './index.html', 'back'), header, overview, navigation, process, footer);
+  app.replaceChildren(link('← 返回', './index.html', 'back'), header, overview, navigation,
+    ...(asset.motion ? [motionComparison(asset.motion)] : []), process, footer);
   reportButton.href = 'https://tally.so/r/2javLg?asset_id=' + encodeURIComponent(asset.id);
   document.title = asset.name + ' · Articulated Assets';
 }
