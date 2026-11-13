@@ -1,0 +1,14 @@
+# Keep the static gallery image-only and small.
+*.blend
+*.blend1
+*.usd
+*.usda
+*.usdc
+*.usdz
+*.zip
+*.exr
+*.fbx
+*.glb
+*.gltf
+*.mp4
+*.mov

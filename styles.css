@@ -1,4 +1,10 @@
-html{scroll-behavior:smooth;scroll-padding-top:24px}
+html{scroll-behavior:smooth;scroll-padding-top:112px}
+.site-header{position:sticky;top:0;z-index:20;background:#090c13ed;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff1f}
+.site-header .topbar{height:88px;border:0;gap:20px}
+.report-issue{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-width:218px;min-height:58px;padding:12px 24px;border:1px solid #d9e8ff;border-radius:12px;background:#b6d1ff;color:#10213d;font-size:17px;line-height:1.2;font-weight:800;text-decoration:none;box-shadow:0 6px 22px #538dff25;white-space:nowrap}
+.report-issue:hover{background:#d5e5ff;box-shadow:0 8px 28px #538dff42}.report-issue:active{transform:translateY(1px)}
+.report-arrow{font-size:26px;font-weight:500;line-height:1}
+.gallery-section{margin-top:0!important}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #a7c7ff;outline-offset:5px}
 h1{line-height:1.08}h3{line-height:1.5}.hero{max-width:850px}.lead{line-height:1.8}.detail-desc{line-height:1.8}
 .thumb{aspect-ratio:16/10;min-height:0;background:#242c33}.thumb img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .25s}.thumb:hover img{transform:scale(1.025)}.thumb:after{background:linear-gradient(180deg,transparent 60%,#050a12bd)}
@@ -15,3 +21,5 @@ h1{line-height:1.08}h3{line-height:1.5}.hero{max-width:850px}.lead{line-height:1
 .page-footer{margin-top:3rem;padding-top:1.25rem;border-top:1px solid #ffffff20;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:#94a6c0;font-size:.83rem}.page-footer a{color:#b4ceff}
 @media(max-width:680px){.topbar{gap:1rem}.topbar .subtle{font-size:.7rem}.meta,.io-grid,.process-list{grid-template-columns:1fr}.io{margin-top:2.5rem}.footer{flex-wrap:wrap}.detail-head h1{line-height:1.18}.downloads .primary{flex:1 1 100%}.filters label{min-width:0}th,td{padding:.75rem .5rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.thumb img{transition:none}}
+@media(max-width:680px){.gallery-grid{grid-template-columns:1fr}.site-header .topbar{height:80px;gap:12px}.report-issue{min-width:174px;min-height:54px;padding:12px 17px;gap:13px;font-size:15px}.report-arrow{font-size:23px}}
+@media(max-width:400px){.site-header .brand{font-size:13px}.report-issue{min-width:158px;padding:12px 14px;font-size:14px;gap:10px}}
