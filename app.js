@@ -185,6 +185,18 @@ else {
   const asset = DATA.assets.find(item => item.id === id);
   if (asset) {
     if (requested !== id) history.replaceState(null, '', '?asset=' + id + location.hash);
-    renderDetail(asset);
+    if (asset.input) renderDetail(asset);
+    else {
+      document.title = asset.name + ' · Articulated Assets';
+      fetch(asset.recordPath).then(response => {
+        if (!response.ok) throw new Error('Asset record unavailable');
+        return response.json();
+      }).then(record => {
+        if (record.id !== asset.id) throw new Error('Asset record mismatch');
+        renderDetail(record);
+      }).catch(() => {
+        app.replaceChildren(make('h1', '', asset.name), link('重新加载 ↻', location.href, 'detail-link'));
+      });
+    }
   } else renderNotFound();
 }
