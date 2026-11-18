@@ -14,3 +14,7 @@
 *.mov
 !assets/microwave-video/*/input.mp4
 !assets/microwave-video/*/output.mp4
+
+# Local browser verification artifacts.
+.playwright-cli/
+output/playwright/
