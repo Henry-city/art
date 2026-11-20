@@ -1,0 +1,535 @@
+{
+  "schema_version": "phyart.simulation-catalog/1",
+  "test_id": "qualification03",
+  "assets": [
+    {
+      "id": "HQ-001",
+      "name": "双门储物柜",
+      "category": "cabinet",
+      "video": "simulations/HQ-001/video.mp4",
+      "poster": "simulations/HQ-001/poster.webp",
+      "report": "simulations/HQ-001/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "柜门1",
+          "kind": "hinge",
+          "open_displacements": [
+            67.72589259081134,
+            67.72589259081134,
+            67.72589259081134
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        },
+        {
+          "id": "P02",
+          "label": "柜门2",
+          "kind": "hinge",
+          "open_displacements": [
+            67.67180407495162,
+            67.67180407495162,
+            67.67180407495162
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-002",
+      "name": "三抽屉柜",
+      "category": "cabinet",
+      "video": "simulations/HQ-002/video.mp4",
+      "poster": "simulations/HQ-002/poster.webp",
+      "report": "simulations/HQ-002/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "抽屉1",
+          "kind": "slide",
+          "open_displacements": [
+            0.24276834726333618,
+            0.24276834726333618,
+            0.24276834726333618
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "id": "P02",
+          "label": "抽屉2",
+          "kind": "slide",
+          "open_displacements": [
+            0.24276834726333618,
+            0.24276834726333618,
+            0.24276834726333618
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "id": "P03",
+          "label": "抽屉3",
+          "kind": "slide",
+          "open_displacements": [
+            0.24215739965438843,
+            0.24215739965438843,
+            0.24215739965438843
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.0,
+            5.0,
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-003",
+      "name": "玻璃门抽屉高柜",
+      "category": "cabinet",
+      "video": "simulations/HQ-003/video.mp4",
+      "poster": "simulations/HQ-003/poster.webp",
+      "report": "simulations/HQ-003/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "柜门1",
+          "kind": "hinge",
+          "open_displacements": [
+            67.77679496102135,
+            67.77679496102135,
+            67.77679496102135
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.000000000000001,
+            5.000000000000001,
+            5.000000000000001
+          ]
+        },
+        {
+          "id": "P02",
+          "label": "柜门2",
+          "kind": "hinge",
+          "open_displacements": [
+            67.62976752371172,
+            67.62976752371172,
+            67.62976752371172
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.000000000000001,
+            5.000000000000001,
+            5.000000000000001
+          ]
+        },
+        {
+          "id": "P03",
+          "label": "抽屉3",
+          "kind": "slide",
+          "open_displacements": [
+            0.17306900024414062,
+            0.17306900024414062,
+            0.17306900024414062
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "id": "P04",
+          "label": "抽屉4",
+          "kind": "slide",
+          "open_displacements": [
+            0.17306901514530182,
+            0.17306901514530182,
+            0.17306901514530182
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.0,
+            5.0,
+            5.0
+          ]
+        },
+        {
+          "id": "P05",
+          "label": "抽屉5",
+          "kind": "slide",
+          "open_displacements": [
+            0.173067107796669,
+            0.173067107796669,
+            0.173067107796669
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.0,
+            5.0,
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-004",
+      "name": "双轨推拉柜",
+      "category": "cabinet",
+      "video": "simulations/HQ-004/video.mp4",
+      "poster": "simulations/HQ-004/poster.webp",
+      "report": "simulations/HQ-004/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "推拉门1",
+          "kind": "slide",
+          "open_displacements": [
+            0.21039451658725739,
+            0.21039451658725739,
+            0.21039451658725739
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "id": "P02",
+          "label": "推拉门2",
+          "kind": "slide",
+          "open_displacements": [
+            0.2099183052778244,
+            0.2099183052778244,
+            0.2099183052778244
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-005",
+      "name": "侧开门微波炉",
+      "category": "microwave",
+      "video": "simulations/HQ-005/video.mp4",
+      "poster": "simulations/HQ-005/poster.webp",
+      "report": "simulations/HQ-005/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "炉门",
+          "kind": "hinge",
+          "open_displacements": [
+            104.6139145854413,
+            104.6139145854413,
+            104.6139145854413
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-006",
+      "name": "下翻门微波炉",
+      "category": "microwave",
+      "video": "simulations/HQ-006/video.mp4",
+      "poster": "simulations/HQ-006/poster.webp",
+      "report": "simulations/HQ-006/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "炉门",
+          "kind": "hinge",
+          "open_displacements": [
+            86.99663819949465,
+            86.99663819949465,
+            86.99663819949465
+          ],
+          "open_passes": 3,
+          "active_close_passes": 0,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.000000000000001,
+            5.000000000000001,
+            5.000000000000001
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-007",
+      "name": "抽屉式微波炉",
+      "category": "microwave",
+      "video": "simulations/HQ-007/video.mp4",
+      "poster": "simulations/HQ-007/poster.webp",
+      "report": "simulations/HQ-007/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "抽屉",
+          "kind": "slide",
+          "open_displacements": [
+            0.3363390117883682,
+            0.3363390117883682,
+            0.3363390117883682
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.0,
+            5.0,
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-008",
+      "name": "连体马桶",
+      "category": "toilet",
+      "video": "simulations/HQ-008/video.mp4",
+      "poster": "simulations/HQ-008/poster.webp",
+      "report": "simulations/HQ-008/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "盖板",
+          "kind": "hinge",
+          "open_displacements": [
+            84.85404347434364,
+            84.85404347434364,
+            84.85404347434364
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.000000000000002,
+            5.000000000000002,
+            5.000000000000002
+          ]
+        },
+        {
+          "id": "P02",
+          "label": "座圈",
+          "kind": "hinge",
+          "open_displacements": [
+            36.56897476189627,
+            36.56897476189627,
+            36.56897476189627
+          ],
+          "open_passes": 3,
+          "active_close_passes": 0,
+          "active_close_attempts": 0,
+          "passive_return_count": 3,
+          "max_forces_n": [
+            20.000000000000004,
+            20.000000000000004,
+            20.000000000000004
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-009",
+      "name": "分体马桶",
+      "category": "toilet",
+      "video": "simulations/HQ-009/video.mp4",
+      "poster": "simulations/HQ-009/poster.webp",
+      "report": "simulations/HQ-009/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "盖板",
+          "kind": "hinge",
+          "open_displacements": [
+            84.99820174208307,
+            84.99820174208307,
+            84.99820174208307
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.000000000000001,
+            5.000000000000001,
+            5.000000000000001
+          ]
+        },
+        {
+          "id": "P02",
+          "label": "座圈",
+          "kind": "hinge",
+          "open_displacements": [
+            35.819636207368795,
+            35.819636207368795,
+            35.819636207368795
+          ],
+          "open_passes": 3,
+          "active_close_passes": 0,
+          "active_close_attempts": 0,
+          "passive_return_count": 3,
+          "max_forces_n": [
+            20.000000000000007,
+            20.000000000000007,
+            20.000000000000007
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HQ-010",
+      "name": "壁挂马桶",
+      "category": "toilet",
+      "video": "simulations/HQ-010/video.mp4",
+      "poster": "simulations/HQ-010/poster.webp",
+      "report": "simulations/HQ-010/result.json",
+      "open_pass": true,
+      "repetitions": 3,
+      "backend": "CPU PhysX",
+      "parts": [
+        {
+          "id": "P01",
+          "label": "盖板",
+          "kind": "hinge",
+          "open_displacements": [
+            90.01265500586086,
+            90.01265500586086,
+            90.01265500586086
+          ],
+          "open_passes": 3,
+          "active_close_passes": 3,
+          "active_close_attempts": 3,
+          "passive_return_count": 0,
+          "max_forces_n": [
+            5.000000000000002,
+            5.000000000000002,
+            5.000000000000002
+          ]
+        },
+        {
+          "id": "P02",
+          "label": "座圈",
+          "kind": "hinge",
+          "open_displacements": [
+            54.18178776221368,
+            54.18178776221368,
+            54.18178776221368
+          ],
+          "open_passes": 3,
+          "active_close_passes": 0,
+          "active_close_attempts": 0,
+          "passive_return_count": 3,
+          "max_forces_n": [
+            20.000000000000007,
+            20.000000000000007,
+            20.000000000000007
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "asset_id": "HQ-004",
+  "status": "completed",
+  "asset_open_pass": true,
+  "frames": 618,
+  "fps": 15,
+  "repetitions": 3,
+  "dt": 0.004166666666666667,
+  "solver": "TGS",
+  "backend": "CPU PhysX",
+  "gravity_m_s2": 9.81,
+  "force_profile": {
+    "max_n": 20,
+    "max_duration_s": 4,
+    "one_second_stages_n": [
+      0.2,
+      1.0,
+      5.0,
+      20.0
+    ],
+    "withdraw_at_limit": true,
+    "feedback_braking": false
+  },
+  "max_base_displacement_mm": 0.0,
+  "max_point_geometry_error_m": 0.0,
+  "meta_sha256": "f162b3f694d461b61a1265b2d48f90b75a67b3dcdb6e2eefbb904be91c0d4493",
+  "script_sha256": "9c2dfdc7bcc2eb63333f5347b8f05dc4133ed766131cb9d814feb50c64b26f0b",
+  "isaac_sim_version": "5.1.0.0",
+  "model_sha256": "e0ba1c33138e996af28f568ea5f95663acf66e5cb4600af47897e1bc2c94fae8",
+  "original_unchanged": true,
+  "physics_usd_unchanged": true,
+  "gripper_used": false,
+  "parts": [
+    {
+      "id": "P01",
+      "label": "推拉门1",
+      "kind": "slide",
+      "open_displacements": [
+        0.21039451658725739,
+        0.21039451658725739,
+        0.21039451658725739
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "id": "P02",
+      "label": "推拉门2",
+      "kind": "slide",
+      "open_displacements": [
+        0.2099183052778244,
+        0.2099183052778244,
+        0.2099183052778244
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "test_id": "qualification03",
+  "video_sha256": "71cfe4ca0f69a43bec21b3878d25947841380eab1a2a39a074e0a67f65afbe36",
+  "mass_estimates_kg": [
+    {
+      "part": "P01",
+      "mass_kg": 3.6502175790166165
+    },
+    {
+      "part": "P02",
+      "mass_kg": 3.6337777191967193
+    }
+  ],
+  "limitations": [
+    "Geometric/material mass estimates, not manufacturer measurements",
+    "Ideal joints represent hinge and guide internals; external collision retained",
+    "Point-force experiment, no physical gripper or robot validation",
+    "Basic opening pass does not imply full travel or active closing pass"
+  ],
+  "no_input_control": {
+    "passed": true,
+    "duration_s": 4,
+    "target_force_n": 0,
+    "parts": [
+      {
+        "tag": "P01",
+        "kind": "slide",
+        "control_peak_displacement": 0.0,
+        "threshold": 0.005,
+        "pass": true
+      },
+      {
+        "tag": "P02",
+        "kind": "slide",
+        "control_peak_displacement": 0.0,
+        "threshold": 0.005,
+        "pass": true
+      }
+    ]
+  }
+}

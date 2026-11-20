@@ -1,0 +1,82 @@
+{
+  "asset_id": "HQ-006",
+  "status": "completed",
+  "asset_open_pass": true,
+  "frames": 426,
+  "fps": 15,
+  "repetitions": 3,
+  "dt": 0.004166666666666667,
+  "solver": "TGS",
+  "backend": "CPU PhysX",
+  "gravity_m_s2": 9.81,
+  "force_profile": {
+    "max_n": 20,
+    "max_duration_s": 4,
+    "one_second_stages_n": [
+      0.2,
+      1.0,
+      5.0,
+      20.0
+    ],
+    "withdraw_at_limit": true,
+    "feedback_braking": false
+  },
+  "max_base_displacement_mm": 0.0,
+  "max_point_geometry_error_m": 1.275605867736528e-16,
+  "meta_sha256": "786129f9fc97321716cbc460e2bb818db8c2faa0cd347540aeb4c281f53539be",
+  "script_sha256": "9c2dfdc7bcc2eb63333f5347b8f05dc4133ed766131cb9d814feb50c64b26f0b",
+  "isaac_sim_version": "5.1.0.0",
+  "model_sha256": "10ec0fd4b1de2d544fe9ac0bc1b21ed2cc2e3428e7665f84355e301a48cf8be6",
+  "original_unchanged": true,
+  "physics_usd_unchanged": true,
+  "gripper_used": false,
+  "parts": [
+    {
+      "id": "P01",
+      "label": "炉门",
+      "kind": "hinge",
+      "open_displacements": [
+        86.99663819949465,
+        86.99663819949465,
+        86.99663819949465
+      ],
+      "open_passes": 3,
+      "active_close_passes": 0,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.000000000000001,
+        5.000000000000001,
+        5.000000000000001
+      ]
+    }
+  ],
+  "test_id": "qualification03",
+  "video_sha256": "6e0ee62f725cbcacb750357d691870f8bef2670c4616b5e3560c978f1a57c2cc",
+  "mass_estimates_kg": [
+    {
+      "part": "P01",
+      "mass_kg": 4.560122078548909
+    }
+  ],
+  "limitations": [
+    "Geometric/material mass estimates, not manufacturer measurements",
+    "Ideal joints represent hinge and guide internals; external collision retained",
+    "Point-force experiment, no physical gripper or robot validation",
+    "Basic opening pass does not imply full travel or active closing pass"
+  ],
+  "no_input_control": {
+    "passed": true,
+    "duration_s": 4,
+    "target_force_n": 0,
+    "parts": [
+      {
+        "tag": "P01",
+        "kind": "hinge",
+        "control_peak_displacement": 0.0,
+        "threshold": 2.0,
+        "pass": true
+      }
+    ]
+  }
+}

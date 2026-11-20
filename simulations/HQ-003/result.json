@@ -1,0 +1,202 @@
+{
+  "asset_id": "HQ-003",
+  "status": "completed",
+  "asset_open_pass": true,
+  "frames": 1590,
+  "fps": 15,
+  "repetitions": 3,
+  "dt": 0.004166666666666667,
+  "solver": "TGS",
+  "backend": "CPU PhysX",
+  "gravity_m_s2": 9.81,
+  "force_profile": {
+    "max_n": 20,
+    "max_duration_s": 4,
+    "one_second_stages_n": [
+      0.2,
+      1.0,
+      5.0,
+      20.0
+    ],
+    "withdraw_at_limit": true,
+    "feedback_braking": false
+  },
+  "max_base_displacement_mm": 0.0,
+  "max_point_geometry_error_m": 3.188872858294072e-16,
+  "meta_sha256": "e2619f529b450bd3cbf8e134c9db13f011cd7ec42b376a81951595e04a7fac1a",
+  "script_sha256": "9c2dfdc7bcc2eb63333f5347b8f05dc4133ed766131cb9d814feb50c64b26f0b",
+  "isaac_sim_version": "5.1.0.0",
+  "model_sha256": "b4dda8ec2b7e83b10228f021c61289d1bf0a57a74239ad8f86a870321209609c",
+  "original_unchanged": true,
+  "physics_usd_unchanged": true,
+  "gripper_used": false,
+  "parts": [
+    {
+      "id": "P01",
+      "label": "柜门1",
+      "kind": "hinge",
+      "open_displacements": [
+        67.77679496102135,
+        67.77679496102135,
+        67.77679496102135
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.000000000000001,
+        5.000000000000001,
+        5.000000000000001
+      ]
+    },
+    {
+      "id": "P02",
+      "label": "柜门2",
+      "kind": "hinge",
+      "open_displacements": [
+        67.62976752371172,
+        67.62976752371172,
+        67.62976752371172
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.000000000000001,
+        5.000000000000001,
+        5.000000000000001
+      ]
+    },
+    {
+      "id": "P03",
+      "label": "抽屉3",
+      "kind": "slide",
+      "open_displacements": [
+        0.17306900024414062,
+        0.17306900024414062,
+        0.17306900024414062
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "id": "P04",
+      "label": "抽屉4",
+      "kind": "slide",
+      "open_displacements": [
+        0.17306901514530182,
+        0.17306901514530182,
+        0.17306901514530182
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "id": "P05",
+      "label": "抽屉5",
+      "kind": "slide",
+      "open_displacements": [
+        0.173067107796669,
+        0.173067107796669,
+        0.173067107796669
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    }
+  ],
+  "test_id": "qualification03",
+  "video_sha256": "0e4a9c32caec3a0b57fdcc6c97b43780c6978052010704b641c1238a78eba51f",
+  "mass_estimates_kg": [
+    {
+      "part": "P01",
+      "mass_kg": 6.133610902961559
+    },
+    {
+      "part": "P02",
+      "mass_kg": 6.133610929112277
+    },
+    {
+      "part": "P03",
+      "mass_kg": 4.696225245947629
+    },
+    {
+      "part": "P04",
+      "mass_kg": 4.696222283999354
+    },
+    {
+      "part": "P05",
+      "mass_kg": 4.696231624423232
+    }
+  ],
+  "limitations": [
+    "Geometric/material mass estimates, not manufacturer measurements",
+    "Ideal joints represent hinge and guide internals; external collision retained",
+    "Point-force experiment, no physical gripper or robot validation",
+    "Basic opening pass does not imply full travel or active closing pass"
+  ],
+  "no_input_control": {
+    "passed": true,
+    "duration_s": 4,
+    "target_force_n": 0,
+    "parts": [
+      {
+        "tag": "P01",
+        "kind": "hinge",
+        "control_peak_displacement": 0.0,
+        "threshold": 2.0,
+        "pass": true
+      },
+      {
+        "tag": "P02",
+        "kind": "hinge",
+        "control_peak_displacement": 0.0,
+        "threshold": 2.0,
+        "pass": true
+      },
+      {
+        "tag": "P03",
+        "kind": "slide",
+        "control_peak_displacement": 0.0,
+        "threshold": 0.005,
+        "pass": true
+      },
+      {
+        "tag": "P04",
+        "kind": "slide",
+        "control_peak_displacement": 0.0,
+        "threshold": 0.005,
+        "pass": true
+      },
+      {
+        "tag": "P05",
+        "kind": "slide",
+        "control_peak_displacement": 0.0,
+        "threshold": 0.005,
+        "pass": true
+      }
+    ]
+  }
+}

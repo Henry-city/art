@@ -18,3 +18,6 @@
 # Local browser verification artifacts.
 .playwright-cli/
 output/playwright/
+
+# Explicitly published, verified Isaac experiment videos.
+!simulations/*/video.mp4

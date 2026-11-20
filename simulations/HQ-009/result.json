@@ -1,0 +1,112 @@
+{
+  "asset_id": "HQ-009",
+  "status": "completed",
+  "asset_open_pass": true,
+  "frames": 678,
+  "fps": 15,
+  "repetitions": 3,
+  "dt": 0.004166666666666667,
+  "solver": "TGS",
+  "backend": "CPU PhysX",
+  "gravity_m_s2": 9.81,
+  "force_profile": {
+    "max_n": 20,
+    "max_duration_s": 4,
+    "one_second_stages_n": [
+      0.2,
+      1.0,
+      5.0,
+      20.0
+    ],
+    "withdraw_at_limit": true,
+    "feedback_braking": false
+  },
+  "max_base_displacement_mm": 0.0,
+  "max_point_geometry_error_m": 3.1401849173675503e-16,
+  "meta_sha256": "e8169ee2ea76561b59a86c3666c77ba5bf1ef33de04a042d42a94012d71febff",
+  "script_sha256": "9c2dfdc7bcc2eb63333f5347b8f05dc4133ed766131cb9d814feb50c64b26f0b",
+  "isaac_sim_version": "5.1.0.0",
+  "model_sha256": "a38462860f7d765e1abdf704c430b7fd53687caebc59a0b2cdb584a3617196fc",
+  "original_unchanged": true,
+  "physics_usd_unchanged": true,
+  "gripper_used": false,
+  "parts": [
+    {
+      "id": "P01",
+      "label": "盖板",
+      "kind": "hinge",
+      "open_displacements": [
+        84.99820174208307,
+        84.99820174208307,
+        84.99820174208307
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.000000000000001,
+        5.000000000000001,
+        5.000000000000001
+      ]
+    },
+    {
+      "id": "P02",
+      "label": "座圈",
+      "kind": "hinge",
+      "open_displacements": [
+        35.819636207368795,
+        35.819636207368795,
+        35.819636207368795
+      ],
+      "open_passes": 3,
+      "active_close_passes": 0,
+      "active_close_attempts": 0,
+      "passive_return_count": 3,
+      "max_forces_n": [
+        20.000000000000007,
+        20.000000000000007,
+        20.000000000000007
+      ]
+    }
+  ],
+  "test_id": "qualification03",
+  "video_sha256": "e5408b2d14b6a8dced9b9472856aed7071ee63ce6d0cb04347023ca5c2a981a8",
+  "mass_estimates_kg": [
+    {
+      "part": "P01",
+      "mass_kg": 0.7897726612238626
+    },
+    {
+      "part": "P02",
+      "mass_kg": 0.5247326623376668
+    }
+  ],
+  "limitations": [
+    "Geometric/material mass estimates, not manufacturer measurements",
+    "Ideal joints represent hinge and guide internals; external collision retained",
+    "Point-force experiment, no physical gripper or robot validation",
+    "Basic opening pass does not imply full travel or active closing pass"
+  ],
+  "no_input_control": {
+    "passed": true,
+    "duration_s": 4,
+    "target_force_n": 0,
+    "parts": [
+      {
+        "tag": "P01",
+        "kind": "hinge",
+        "control_peak_displacement": 0.0,
+        "threshold": 2.0,
+        "pass": true
+      },
+      {
+        "tag": "P02",
+        "kind": "hinge",
+        "control_peak_displacement": 0.0,
+        "threshold": 2.0,
+        "pass": true
+      }
+    ]
+  }
+}

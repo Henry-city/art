@@ -1,0 +1,82 @@
+{
+  "asset_id": "HQ-007",
+  "status": "completed",
+  "asset_open_pass": true,
+  "frames": 363,
+  "fps": 15,
+  "repetitions": 3,
+  "dt": 0.004166666666666667,
+  "solver": "TGS",
+  "backend": "CPU PhysX",
+  "gravity_m_s2": 9.81,
+  "force_profile": {
+    "max_n": 20,
+    "max_duration_s": 4,
+    "one_second_stages_n": [
+      0.2,
+      1.0,
+      5.0,
+      20.0
+    ],
+    "withdraw_at_limit": true,
+    "feedback_braking": false
+  },
+  "max_base_displacement_mm": 0.0,
+  "max_point_geometry_error_m": 0.0,
+  "meta_sha256": "131a43c159ea7c6592b7fdc2a2e7238e2d0f4e5af3bd7fcb859a7d1cc2472d61",
+  "script_sha256": "9c2dfdc7bcc2eb63333f5347b8f05dc4133ed766131cb9d814feb50c64b26f0b",
+  "isaac_sim_version": "5.1.0.0",
+  "model_sha256": "28c7a477b0ef791b4a2620320f0898e043d6dce4b3157baaa652e622e5c0d050",
+  "original_unchanged": true,
+  "physics_usd_unchanged": true,
+  "gripper_used": false,
+  "parts": [
+    {
+      "id": "P01",
+      "label": "抽屉",
+      "kind": "slide",
+      "open_displacements": [
+        0.3363390117883682,
+        0.3363390117883682,
+        0.3363390117883682
+      ],
+      "open_passes": 3,
+      "active_close_passes": 3,
+      "active_close_attempts": 3,
+      "passive_return_count": 0,
+      "max_forces_n": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    }
+  ],
+  "test_id": "qualification03",
+  "video_sha256": "613d05124233a1367a7d23c6d96968cb13a67d29c04a96a9b8a312ae64c951fa",
+  "mass_estimates_kg": [
+    {
+      "part": "P01",
+      "mass_kg": 7.014631154742489
+    }
+  ],
+  "limitations": [
+    "Geometric/material mass estimates, not manufacturer measurements",
+    "Ideal joints represent hinge and guide internals; external collision retained",
+    "Point-force experiment, no physical gripper or robot validation",
+    "Basic opening pass does not imply full travel or active closing pass"
+  ],
+  "no_input_control": {
+    "passed": true,
+    "duration_s": 4,
+    "target_force_n": 0,
+    "parts": [
+      {
+        "tag": "P01",
+        "kind": "slide",
+        "control_peak_displacement": 0.0,
+        "threshold": 0.005,
+        "pass": true
+      }
+    ]
+  }
+}
