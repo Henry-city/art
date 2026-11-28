@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="查看高标准资产与代码资产的每日生产记录、累计数量和 API 消耗。">
+  <title>生产动态 · Articulated Assets</title>
+  <link rel="stylesheet" href="styles.css?v=20261128">
+  <link rel="stylesheet" href="production.css?v=20261128">
+</head>
+<body class="production-page">
+  <a class="skip-link" href="#production-app">跳到内容</a>
+  <header class="site-header"><div class="shell topbar"><a class="brand" href="./index.html">Articulated Assets</a><nav class="site-nav" aria-label="主导航"><a href="./index.html">资产展示</a><a href="./production.html" aria-current="page">生产动态</a></nav><a class="report-issue" href="https://tally.so/r/2javLg" target="_blank" rel="noopener noreferrer">Report Issue</a></div></header>
+  <main id="production-app" class="shell">
+    <header class="production-heading"><div><p class="overline">PRODUCTION LOG</p><h1>生产动态</h1><p class="lead">记录每天的生产，让每一份积累都有迹可循。</p></div><div class="heading-meta"><span id="latest-date"></span><span class="pool-pill">GPT 号池 <strong id="account-count">—</strong> 个账号</span></div></header>
+    <section aria-label="统计范围" class="toolbar"><div class="segments" role="group" aria-label="统计方式"><button type="button" data-mode="day" aria-pressed="true">按日</button><button type="button" data-mode="month" aria-pressed="false">按月</button><button type="button" data-mode="all" aria-pressed="false">累计</button></div><label id="period-label" class="date-field"><span>日期</span><input id="period-input" type="date" aria-label="统计日期"></label><button type="button" id="latest-button" class="quiet-button">最新记录</button><div class="toolbar-actions"><button type="button" id="add-record" class="primary-button">录入日报</button></div></section>
+    <div class="range-heading"><h2 id="range-title"></h2><span id="production-summary"></span></div>
+    <div id="metrics" class="metrics" aria-live="polite"></div>
+    <div id="costs" class="costs"></div>
+    <p id="scope-note" class="scope-note"></p>
+    <section class="daily-gallery" aria-labelledby="gallery-heading"><div class="section-title"><div><p class="overline">ASSET SNAPSHOTS</p><h2 id="gallery-heading">资产缩略图</h2><p id="gallery-note" class="subtle"></p></div><div class="segments gallery-tabs" role="group" aria-label="资产类别"><button type="button" data-category="all" aria-pressed="true">全部 <span id="all-image-count"></span></button><button type="button" data-category="code" aria-pressed="false">代码资产 <span id="code-image-count"></span></button><button type="button" data-category="high" aria-pressed="false">高标准资产 <span id="high-image-count"></span></button></div></div><div id="thumbnail-grid" class="thumbnail-grid"></div><div id="gallery-pagination" class="pagination"></div><details class="original-sheets"><summary>查看当日原始缩略图总览</summary><div id="sheet-list"></div></details></section>
+    <section class="history-section" aria-labelledby="history-heading"><div class="section-title"><div><p class="overline">DAILY ARCHIVE</p><h2 id="history-heading">每日记录</h2></div><button type="button" id="all-history" class="quiet-button">全部历史</button></div><div class="table-scroll"><table><caption class="sr-only">每日分类新增、累计数量、API 费用与号池账号数量</caption><thead><tr><th scope="col">日期</th><th scope="col">高标准 · 新增 / 累计</th><th scope="col">代码 · 新增 / 累计</th><th scope="col">GPT · USD</th><th scope="col">4router · CNY</th><th scope="col">号池</th></tr></thead><tbody id="history-body"></tbody></table></div><details class="baseline-details"><summary>历史初始余额与统计口径</summary><p id="baseline-note"></p><p>高标准资产与代码资产是两个独立类别，分别统计。费用保留原币种，不做汇率换算。没有日报的日期表示未录入，不表示当日产量或费用为零。</p></details></section>
+    <section class="data-tools" aria-label="数据管理"><div><h2>保留每一天的记录</h2><p>日报保存在当前浏览器。更新网站时，导出网站数据并替换 <code>assets/production/data.js</code> 后重新 push；记录与缩略图一起保留。</p></div><div class="data-actions"><button type="button" id="export-site" class="secondary-button">导出网站数据</button><button type="button" id="export-json" class="quiet-button">备份 JSON</button><label class="quiet-button file-button">导入备份<input id="import-json" type="file" accept="application/json,.json"></label></div></section>
+    <p id="storage-status" class="storage-status" role="status"></p>
+    <footer class="production-footer"><span>Articulated Assets / Production</span><span>日期按北京时间记录</span></footer>
+  </main>
+  <dialog id="record-dialog" aria-labelledby="record-title"><form id="record-form"><div class="dialog-heading"><div><p class="overline">DAILY ENTRY</p><h2 id="record-title">录入日报</h2></div><button type="button" class="quiet-button" id="close-record">关闭</button></div><p class="subtle">输入当天新增量。累计数量和费用将自动计算，其他日期的记录会保留。</p><div class="form-grid"><label>记录日期<input name="date" type="date" required></label><label>号池账号数<input name="accountCount" type="number" min="0" step="1" required></label><label>高标准资产 · 新增<input name="highStandardAdded" type="number" min="0" step="1" required></label><label>代码资产 · 新增<input name="codeAdded" type="number" min="0" step="1" required></label><label>GPT（自有号池）· 美元<input name="gptUsd" type="number" min="0" step="0.0001" required></label><label>4router（Claude）· 人民币<input name="claudeCny" type="number" min="0" step="0.01" required></label><label class="wide">新增图片类型<select name="imageKind"><option value="asset">单个资产缩略图</option><option value="overview">多资产总览图</option></select></label><label class="wide">当日备注<textarea name="note" rows="2" maxlength="1000"></textarea></label><label>添加高标准资产缩略图<input name="highImages" type="file" accept="image/png,image/jpeg,image/webp" multiple></label><label>添加代码资产缩略图<input name="codeImages" type="file" accept="image/png,image/jpeg,image/webp" multiple></label></div><p class="subtle">单个资产缩略图每张对应一件资产；总览图可包含多件资产。已有图片会保留，也可先保存产量再补图。网页上传会生成展示缩略图；需要保留高清原图时，可将原图放入 assets/production/ 并使用文件路径。</p><p id="record-existing" class="form-notice"></p><p id="record-error" class="error" role="alert"></p><div class="form-actions"><button type="button" id="cancel-record" class="quiet-button">取消</button><button type="submit" id="save-record" class="primary-button">保存日报</button></div></form></dialog>
+  <dialog id="image-dialog" class="lightbox" aria-labelledby="image-title"><div class="dialog-heading"><h2 id="image-title"></h2><div class="image-actions"><button type="button" id="zoom-image" class="quiet-button">原始尺寸</button><a id="open-original" class="quiet-button" target="_blank" rel="noopener noreferrer">打开原图</a><button type="button" id="close-image" class="quiet-button">关闭</button></div></div><img id="large-image" alt=""></dialog>
+  <noscript><p class="shell">请启用 JavaScript 查看生产动态与每日记录。</p></noscript>
+  <script src="assets/production/data.js?v=20261128"></script>
+  <script src="production-core.js?v=20261128"></script>
+  <script src="production.js?v=20261128"></script>
+</body>
+</html>

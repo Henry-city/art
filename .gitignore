@@ -14,3 +14,6 @@
 *.mov
 !assets/microwave-video/*/input.mp4
 !assets/microwave-video/*/output.mp4
+
+.production-backups/
+assets/production/data.js.tmp
